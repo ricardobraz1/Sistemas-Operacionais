@@ -7,6 +7,7 @@ from core.srtf import SRTF
 from core.prioc import Prioc
 from core.priop import Priop
 
+# Define os algoritmos disponíveis por tipo de processo
 algoritmos_por_tipo = {
     1: [FCFS, SJF],
     2: [SRTF, Prioc],
@@ -35,7 +36,7 @@ def main():
 
         algo_escolhido = algs[int(escolha) - 1].__name__
 
-        if algo_escolhido in ["RoundRobin", "Priop"]:
+        if algo_escolhido in ["RoundRobin", "Priop", "SRTF"]:
             print("Quantum padrão = 1")
             novo_quantum = input("Deseja alterar o quantum? (pressione Enter para manter): ").strip()
             quantum = int(novo_quantum) if novo_quantum else 1
